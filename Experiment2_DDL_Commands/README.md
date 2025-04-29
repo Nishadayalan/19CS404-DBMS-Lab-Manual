@@ -105,123 +105,194 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/7ff5e5eb-40e8-4201-84c2-ec8cf4369ac8)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Members(
+MemberID INTEGER,
+MemberName TEXT,
+JoinDate DATE
+);
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/cd08c493-ffd9-4139-bfa3-6c9d1db277d4)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+
+![image](https://github.com/user-attachments/assets/b2b70941-a300-4ec3-9c51-98d7f83728b4)
+
+
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE Locations(
+LocationID INTEGER,
+LocationName  TEXT,
+Address TEXT
+);
 ```
 
 **Output:**
 
-![Output2](output.png)
+
+![image](https://github.com/user-attachments/assets/e00c1eec-5043-4446-a2c8-ee8afaa41e0a)
+
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/b01549f5-0ccc-4af2-bd92-cc827e67edd0)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE item(
+item_id TEXT PRIMARY KEY,
+item_desc TEXT NOT NULL,
+rate INTEGER,
+icom_id TEXT CHECK(LENGTH(icom_id)=4),
+FOREIGN KEY (icom_id)REFERENCES company(com_id)
+ON UPDATE CASCADE
+ON DELETE CASCADE
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/3d50fd89-2e01-4068-b9cf-010ad7fe96ea)
 
 **Question 4**
 ---
--- Paste Question 4 here
+
+![image](https://github.com/user-attachments/assets/621d7480-bc24-4506-bb99-d1aac375ad2a)
+
+
 
 ```sql
--- Paste your SQL code below for Question 4
+CREATE TABLE Orders(
+    OrderID INTEGER PRIMARY KEY,
+    OrderDate DATE NOT NULL,
+    CustomerID INTEGER,
+    FOREIGN KEY(CustomerID)REFERENCES Customers(CustomerID)
+);
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/93de3a8e-37e5-44a8-a83d-01c0e7e8978b)
+
+
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+
+![image](https://github.com/user-attachments/assets/6190693e-8b8b-405c-b284-ed46bca8afe3)
+
+
 
 ```sql
--- Paste your SQL code below for Question 5
+ALTER TABLE employee
+ADD COLUMN designation varchar(50);
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/f74ff937-f633-44df-a123-cb30ff97f408)
+
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/54f909c0-80cd-4287-86ed-c507ee6cd9ba)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+ALTER TABLE employee ADD COLUMN department_id INTEGER;
+ALTER TABLE employee ADD COLUMN manager_id INTEGER DEFAULT NULL;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/4b8e3261-5588-4bdc-a11e-7a04b5c42f99)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/2f08110e-1fcc-454a-ab90-c4c61d5068f8)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Products(
+ProductID  INTEGER PRIMARY KEY,
+ProductName INTEGER NOT NULL,
+Price REAL CHECK(Price>0),
+Stock INTEGER CHECK(Stock>=0)
+)
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/21749ddf-4c0a-4eaf-9242-9f320ed8df43)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+
+![image](https://github.com/user-attachments/assets/153008f6-4fde-4b1f-9835-9065a46cf853)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+ALTER TABLE customer
+ADD COLUMN discount DECIMAL(5,2);
 ```
 
 **Output:**
 
-![Output8](output.png)
+
+![Screenshot 2025-04-29 141257](https://github.com/user-attachments/assets/83cbf050-ee72-4450-bb1c-0677e72f0c4b)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/91deda84-035c-4510-a6db-44d30af6e1bc)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+ALTER TABLE Student_details ADD COLUMN MobileNumber NUMBER;
+ALTER TABLE Student_details ADD COLUMN Address VARCHAR(100);
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/4a9640f5-d1d1-4533-90ed-362e3413092e)
 
 **Question 10**
 ---
--- Paste Question 10 here
+
+
+![Screenshot 2025-04-29 141558](https://github.com/user-attachments/assets/771b2889-7e46-4fd7-8f12-9e0fd09f5a29)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE Products(
+ProductID INTEGER PRIMARY KEY,
+ProductName TEXT UNIQUE NOT NULL,
+Price REAL CHECK (Price>0),
+StockQuantity INTEGER CHECK (StockQuantity>=0)
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+
+![Screenshot 2025-04-29 141615](https://github.com/user-attachments/assets/72da2449-3183-4778-8ddf-5d2b2341645a)
+
+
 
 
 ## RESULT
