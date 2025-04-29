@@ -38,15 +38,21 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/eea273a3-bdfc-439a-a42d-50224f6d747b)
+
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT name AS Employee_Name, age AS Age
+FROM employee
+ORDER BY Age ASc
+LIMIT 1;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/e81b67c7-3587-42cf-8785-9ed2bca88667)
+
 
 **Question 2**
 ---
