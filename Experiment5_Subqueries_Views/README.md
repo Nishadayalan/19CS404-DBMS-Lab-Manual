@@ -1,7 +1,7 @@
 # Experiment 5: Subqueries and Views
 
 ## AIM
-To study and implement subqueries and views.
+To study and implement subqueries and viewS.
 
 ## THEORY
 
@@ -162,50 +162,72 @@ WHERE age < (
 
 **Question 7**
 ---
+![image](https://github.com/user-attachments/assets/48666326-10be-48ed-8046-6d3a49cb2e26)
 
 
 ```sql
-
+SELECT commission
+FROM salesman
+WHERE salesman_id IN
+(SELECT salesman_id FROM customer WHERE city='Paris');
 ```
 
 **Output:**
 
+![image](https://github.com/user-attachments/assets/626a2880-134a-43ee-b4ad-84e61d6e85ce)
 
 
 **Question 8**
 ---
+![image](https://github.com/user-attachments/assets/fde8c7f8-f5d0-4b41-a35b-99522c58fda5)
 
 
 ```sql
-
+SELECT ord_no, purch_amt, ord_date, customer_id, salesman_id
+FROM ORDERS
+WHERE purch_amt > (
+    SELECT AVG(purch_amt)
+    FROM ORDERS
+    WHERE ord_date = '2012-10-10'
+);
 ```
 
 **Output:**
 
+![image](https://github.com/user-attachments/assets/510460f5-4d53-445c-8532-892d8a2babdb)
 
 
 **Question 9**
 ---
+![image](https://github.com/user-attachments/assets/6eda3db2-9f9d-4abf-b54e-5de7ba245a35)
 
 
 ```sql
-
+SELECT o.ord_no, o.purch_amt, o.ord_date, o.customer_id, o.salesman_id
+FROM ORDERS o
+JOIN SALESMAN s ON o.salesman_id = s.salesman_id
+WHERE s.city = 'New York';
 ```
 
 **Output:**
 
+![image](https://github.com/user-attachments/assets/ec9fdd44-8505-43dd-bfc1-a30ab7afb8cc)
 
 
 **Question 10**
 ---
 
+![image](https://github.com/user-attachments/assets/652f0357-af5d-407f-a7e1-f13f1504aa2f)
 
 ```sql
-
+SELECT *
+FROM CUSTOMERS
+WHERE SALARY < 2500;
 ```
 
 **Output:**
 
+![image](https://github.com/user-attachments/assets/f6cab633-780c-4363-931a-074c0e1308ae)
 
 
 
