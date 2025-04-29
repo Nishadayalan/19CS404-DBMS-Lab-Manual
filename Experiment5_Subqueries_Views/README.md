@@ -38,123 +38,175 @@ DROP VIEW view_name;
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/88a40189-1c37-46f2-a17b-05be8863d0df)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT student_name, grade
+FROM GRADES g
+WHERE grade = (
+    SELECT MAX(grade)
+    FROM GRADES
+    WHERE subject = g.subject
+);
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/233b3847-f3fc-4aba-9cac-41ca40ce7be7)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/48392dd7-9605-4f2e-a581-6671544614c5)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT department_id, department_name
+FROM Departments
+WHERE LENGTH(department_name) > (
+    SELECT AVG(LENGTH(department_name)) FROM Departments
+);
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/e9120de9-feb3-4af4-98a6-ba0006a37b0d)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/0d538172-1fb3-4392-9e6e-aa0a2a4f1437)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT medication_id, medication_name, dosage
+FROM Medications
+WHERE CAST(SUBSTR(dosage, 1, LENGTH(dosage) - 2) AS INT) = (
+    SELECT MIN(CAST(SUBSTR(dosage, 1, LENGTH(dosage) - 2) AS INT))
+    FROM Medications
+);
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/54939113-1feb-4e78-8e8d-909bc85eeb9c)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/ea483a91-f965-4f5b-a2b6-6a371794ca64)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT name
+FROM customer
+WHERE phone IN (
+    SELECT phone
+    FROM customer
+    GROUP BY phone
+    HAVING COUNT(*) = 1
+);
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/b01928cc-8c21-4a01-ab4e-356f89a8d4f5)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/20c82144-3e21-4aba-b00c-2c7a9a94b006)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT name, city
+FROM customer
+WHERE city IN (
+    SELECT city
+    FROM customer
+    WHERE id IN (3, 7)
+);
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/cd291f07-9f36-448c-ba98-3f17caf78693)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/b2d46683-5f7a-4d69-9055-ce50784025a2)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT id, name, age, city, income
+FROM Employee
+WHERE age < (
+    SELECT AVG(age)
+    FROM Employee
+    WHERE income > 250000
+);
+
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/a0d2c4c8-ac09-4ca2-bdb3-319161dd7fb0)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+
 
 ```sql
--- Paste your SQL code below for Question 7
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+
 
 ```sql
--- Paste your SQL code below for Question 8
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+
 
 ```sql
--- Paste your SQL code below for Question 9
+
 ```
 
 **Output:**
 
-![Output9](output.png)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+
 
 ```sql
--- Paste your SQL code below for Question 10
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+
 
 
 ## RESULT
