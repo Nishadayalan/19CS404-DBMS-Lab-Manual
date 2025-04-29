@@ -136,6 +136,7 @@ DoctorID;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/d0cff8da-bcfb-400f-a4b3-34d173c52325)
 
 
@@ -152,6 +153,7 @@ WHERE city='Chennai';
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/7a0f1d06-813a-4f6e-8b22-b463dabc7fbf)
 
 
@@ -169,6 +171,7 @@ LIMIT 1;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/7046a189-b07e-4c0f-84df-58f6d2256093)
 
 
