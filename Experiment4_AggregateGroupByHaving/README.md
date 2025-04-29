@@ -56,87 +56,103 @@ LIMIT 1;
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/5117d126-c199-4414-8ef9-e36cb1eb643b)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT name,emaiL,LENGTH(email)AS min_email_length
+FROM customer
+ORDER BY LENGTH(email) ASC
+LIMIT 1;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/89277f4f-a9de-403a-9c84-2ecfee36c4cd)
 
-![Output2](output.png)
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/425b3b54-ceb3-4731-b049-d0f2ed612e72)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT address,SUM(salary) 
+FROM customer1
+GROUP BY address
+HAVING SUM(salary)>2000;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/1339db0a-2850-44ef-a74a-71c8fd08d9fc)
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/c2b0559d-9ab6-498f-824e-c5d538108710)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT occupation,MIN(workhour) 
+FROM employee1
+GROUP BY occupation
+HAVING MIN(workhour) > 8;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/93b9491c-4619-472f-94b5-c9e4a46b4263)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT category_id,product_name,MAX(Price) AS Price
+FROM products
+GROUP BY category_id
+HAVING MAX(Price)>15;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/889c7f05-42c3-48df-be68-e63d8e80e843)
 
 **Question 6**
 ---
--- Paste Question 6 here
+
 
 ```sql
--- Paste your SQL code below for Question 6
+
 ```
 
 **Output:**
 
-![Output6](output.png)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+
 
 ```sql
--- Paste your SQL code below for Question 7
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+
 
 ```sql
--- Paste your SQL code below for Question 8
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+
 
 **Question 9**
 ---
