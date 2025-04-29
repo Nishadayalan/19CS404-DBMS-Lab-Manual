@@ -83,19 +83,23 @@ HAVING SUM(salary)>2000;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/1339db0a-2850-44ef-a74a-71c8fd08d9fc)
 
 
 **Question 4**
 ---
+
 ![image](https://github.com/user-attachments/assets/c2b0559d-9ab6-498f-824e-c5d538108710)
 
 
 ```sql
+
 SELECT occupation,MIN(workhour) 
 FROM employee1
 GROUP BY occupation
 HAVING MIN(workhour) > 8;
+
 ```
 
 **Output:**
@@ -105,6 +109,7 @@ HAVING MIN(workhour) > 8;
 
 **Question 5**
 ---
+![image](https://github.com/user-attachments/assets/2a9efecb-9b6a-4631-8ea3-2efb11c585f7)
 
 
 ```sql
@@ -120,63 +125,90 @@ HAVING MAX(Price)>15;
 
 **Question 6**
 ---
+![image](https://github.com/user-attachments/assets/8b72ace6-6600-4cce-bed5-dc031865769a)
 
 
 ```sql
-
+SELECT DoctorID,COUNT(*)AS TotalRecords
+FROM MedicalRecords
+GROUP BY
+DoctorID;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/d0cff8da-bcfb-400f-a4b3-34d173c52325)
 
 
 
 **Question 7**
 ---
+![image](https://github.com/user-attachments/assets/e655f561-7b26-4feb-ac25-753cf92f67c9)
 
 
 ```sql
-
+SELECT AVG(LENGTH(name))AS avg_name_length
+FROM customer
+WHERE city='Chennai';
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/7a0f1d06-813a-4f6e-8b22-b463dabc7fbf)
 
 
 
 **Question 8**
 ---
+![image](https://github.com/user-attachments/assets/bf9ce279-fe92-4892-928e-195ca172d92f)
 
 
 ```sql
-
+SELECT name,LENGTH(name)AS length
+FROM customer
+ORDER BY LENGTH(name)DESC
+LIMIT 1;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/7046a189-b07e-4c0f-84df-58f6d2256093)
 
 
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/eae9f665-d2ba-46ca-b9ae-ebf83ac6ce24)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT (age/5)*5 AS age_group,AVG(age)
+FROM customer1
+GROUP BY (age/5)*5
+HAVING AVG(age)<24;
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/0c3f563c-ef26-4130-be8c-b2789c3e2ac3)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/5602a2ef-5a55-4193-856d-45098d1455fd)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT 
+jdate,
+MAX(workhour)
+FROM employee1
+GROUP BY jdate
+HAVING
+MAX(workhour)>12;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/1e179ff8-7c0d-42d8-b25c-e678e14aa019)
+
 
 
 ## RESULT
