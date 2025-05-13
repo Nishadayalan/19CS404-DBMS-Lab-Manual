@@ -36,7 +36,9 @@ END;
 
 **Expected Output:**  
 Greater number is: 80
-##PROGRAM:
+
+## PROGRAM:
+
 ```
 DECLARE
    num1 NUMBER := 45;  
@@ -52,7 +54,8 @@ END;
 
 ```
 
-##OUTPUT:
+## OUTPUT:
+
 ![image](https://github.com/user-attachments/assets/c6e6d7f7-3120-49aa-bb88-00b2a688af59)
 
 
