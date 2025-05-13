@@ -36,6 +36,25 @@ END;
 
 **Expected Output:**  
 Greater number is: 80
+##PROGRAM:
+```
+DECLARE
+   num1 NUMBER := 45;  
+   num2 NUMBER := 80;  
+BEGIN
+   IF num1 > num2 THEN
+      DBMS_OUTPUT.PUT_LINE('Greater number is: ' || num1);
+   ELSE
+      DBMS_OUTPUT.PUT_LINE('Greater number is: ' || num2);
+   END IF;
+END;
+/
+
+```
+
+##OUTPUT:
+![image](https://github.com/user-attachments/assets/c6e6d7f7-3120-49aa-bb88-00b2a688af59)
+
 
 ---
 
