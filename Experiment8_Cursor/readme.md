@@ -79,7 +79,55 @@ END;
 **Output:**  
 The program should display the employee details or an error message.
 
+## PROGRAM:
+```
+CREATE TABLE employees (
+   emp_id      NUMBER PRIMARY KEY,
+   emp_name    VARCHAR2(50),
+   designation VARCHAR2(50)
+);
+
+Insert data into the employees table
+INSERT INTO employees (emp_id, emp_name, designation) VALUES (1, 'Alice', 'Manager');
+INSERT INTO employees (emp_id, emp_name, designation) VALUES (2, 'Bob', 'Developer');
+INSERT INTO employees (emp_id, emp_name, designation) VALUES (3, 'Charlie', 'Analyst');
+COMMIT;
+
+DECLARE
+   CURSOR emp_cursor IS
+      SELECT emp_name, designation FROM employees;
+
+   v_name        employees.emp_name%TYPE;
+   v_designation employees.designation%TYPE;
+   no_data BOOLEAN := TRUE;
+BEGIN
+   OPEN emp_cursor;
+   LOOP
+      FETCH emp_cursor INTO v_name, v_designation;
+      EXIT WHEN emp_cursor%NOTFOUND;
+      DBMS_OUTPUT.PUT_LINE('Name: ' || v_name || ', Designation: ' || v_designation);
+      no_data := FALSE;
+   END LOOP;
+   CLOSE emp_cursor;
+
+   IF no_data THEN
+      RAISE NO_DATA_FOUND;
+   END IF;
+
+EXCEPTION
+   WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE('No employee data found.');
+   WHEN OTHERS THEN
+      DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);
+END;
+/
+```
+
 ---
+## OUTPUT:
+
+![image](https://github.com/user-attachments/assets/ef22a9c9-03c5-4404-8f05-d433e4a603a6)
+
 
 ### **Question 2: Parameterized Cursor with Exception Handling**
 
